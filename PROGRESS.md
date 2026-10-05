@@ -235,3 +235,9 @@ python test_frontend.py
 The page was also pointed (read-only) at the real review `1dacc89391fd`; it showed
 "Finished in 10 min 27 s with 9 model call(s)", "Verified fix: 2 of 2 issue(s) fixed and
 confirmed by pylint", the two code versions side by side, and the diff.
+
+**Project documentation (5 Oct 2026).** Added `README.md` (overview, architecture,
+setup steps, API, testing, limitations) and `requirements.txt`, so the project can be
+installed and run on another computer by following the README. All five automated tests
+pass in the current state: verifier 8/8, parsing 11/11, explanation 7/7, database 6/6,
+web page 7/7.

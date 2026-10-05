@@ -3,3 +3,8 @@ __pycache__/
 *.pyc
 logs/
 .env
+.venv/
+reviews.db
+reviews.db-shm
+reviews.db-wal
+temp.py
