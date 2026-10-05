@@ -4,6 +4,10 @@ _Last updated: 5 October 2026_
 
 ## 1. Component checklist
 
+**Overall: about 65% complete.** The full review system works end to end with the
+real AI model (backend, database and web page included); what remains is mostly
+testing it on more files, using the collected 👍/👎, and polishing the web page.
+
 | Component (from proposal) | Status |
 |---|---|
 | Code collection (paste code, upload a file, local folder, GitHub repo) | ✅ Done |
@@ -40,16 +44,26 @@ corrected code side by side, the exact changes, the explanation, and 👍/👎 b
 
 ## 3. What's left (in order)
 
-1. **Frontend:** first hands-on run in a browser with the real model; fix anything that
-   feels unclear when used for real.
-2. **Feedback loop:** use the stored 👍/👎 ratings (e.g. report which kinds of fixes users
-   accept or reject).
-3. Full end-to-end demo run with the real model through the web interface, recorded as
-   evidence.
-4. Report: Chapter 4 (Design) is drafted from the built system (architecture and
-   agent-loop diagrams, verification algorithm) and is awaiting review.
-5. Speed: the agent re-sends the whole code inside every step it remembers, which makes
-   each model call slower as a review goes on. Worth trimming if time allows.
+1. **Web page — first hands-on use:** try it in a browser with the real model, including
+   the "upload a file" option (the only part the automated test cannot click), and fix
+   anything that feels unclear.
+2. **Feedback loop:** use the saved 👍/👎 ratings, e.g. report which kinds of fixes people
+   accept or reject, and use that to improve the instructions given to the AI.
+3. **Web page improvements:** submit a whole folder or a GitHub link from the page (the
+   backend already supports both), an overview when several files are reviewed, a button
+   to download the corrected file or a report, a clearer coloured view of the changes,
+   and searching past reviews.
+4. **Testing on more files and a recorded demo:** run a fixed set of real files and
+   measure how many problems get fixed, why fixes are rejected, and how long each takes;
+   record a full run through the web page.
+5. **Speed:** the AI is re-sent the whole code at every step it remembers, which makes
+   each call slower as a review goes on. Trim this.
+6. **AI message handling:** the AI still sometimes garbles its messages when they contain
+   code with docstrings (it does not affect results, but should be prevented); add
+   instructions for harder problem types such as loop restructuring.
+7. **Tidy the automated tests** into one standard test suite.
+8. **Report:** Chapter 4 (Design) is drafted and kept in step with the system; it is
+   awaiting review.
 
 ## 4. Evidence (real test results)
 
